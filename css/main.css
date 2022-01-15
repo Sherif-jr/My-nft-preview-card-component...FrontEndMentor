@@ -1,0 +1,150 @@
+:root {
+  --primary-color: hsl(215, 51%, 70%);
+  --sec-color: hsl(178, 100%, 50%);
+  --main-BG: #0d192b;
+  --card-BG: hsl(216, 50%, 16%);
+  --line: hsl(215, 32%, 27%);
+  --size: 18px;
+  --global-transition: 0.3s;
+}
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+body {
+  font-family: "Outfit", sans-serif;
+}
+.background {
+  background-color: var(--main-BG);
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.background .card {
+  background-color: var(--card-BG);
+  width: 340px;
+  height: 90vh;
+  border-radius: 15px;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  align-items: center;
+  padding: 20px;
+  box-shadow: 0 39px 8px 20px rgb(11, 21, 37),
+    0 20px 4px 40px rgba(11, 21, 37, 0.4);
+}
+.image {
+  width: 100%;
+  margin-bottom: 20px;
+  border-radius: 10px;
+  padding: 0;
+  position: relative;
+  cursor: pointer;
+  height: 300px;
+}
+.image:hover .overlay {
+  display: flex;
+}
+.image > img {
+  width: 100%;
+  border-radius: 10px;
+  transition: all var(--global-transition);
+}
+.image .overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(0, 255, 247, 0.4);
+  display: none;
+  transition: all var(--global-transition);
+}
+.part {
+  width: 100%;
+}
+.main-text {
+  margin-bottom: 20px;
+}
+.main-text > h3 {
+  color: white;
+  margin-bottom: 15px;
+  transition: all var(--global-transition);
+  cursor: pointer;
+}
+.main-text > h3:hover {
+  color: var(--sec-color);
+}
+.main-text > p {
+  color: var(--primary-color);
+  font-size: 18px;
+  font-weight: 200;
+}
+
+.other-text {
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 1px solid var(--line);
+  padding-bottom: 15px;
+  margin-bottom: 15px;
+  align-items: center;
+}
+.other-text span {
+  display: flex;
+  flex-wrap: nowrap;
+  align-items: center;
+  justify-content: space-between;
+}
+.other-text span > svg {
+  margin-right: 5px;
+}
+.other-text .coin {
+  color: var(--sec-color);
+  font-weight: 600;
+}
+.other-text .time {
+  color: var(--primary-color);
+}
+.creator {
+  display: flex;
+  flex-wrap: nowrap;
+  align-items: center;
+  font-size: 0.9em;
+}
+.creator > img {
+  width: 30px;
+  border: 1px solid white;
+  border-radius: 50%;
+  margin-right: 15px;
+}
+.creator > p {
+  color: var(--primary-color);
+}
+.creator > p > span {
+  color: white;
+}
+.attribution {
+  position: fixed;
+  right: 30px;
+  bottom: 5px;
+  color: white;
+}
+
+@media (max-width: 767px) {
+  .background {
+    overflow: hidden;
+    overflow: -moz-hidden-unscrollable;
+  }
+  .background .card {
+    height: fit-content;
+  }
+  .attribution {
+    left: 0;
+  }
+}
